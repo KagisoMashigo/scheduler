@@ -56,4 +56,5 @@ it("renders a disabled button", () => {
   fireEvent.click(button);
 
   expect(handleClick).toHaveBeenCalledTimes(0);
+  
 });
