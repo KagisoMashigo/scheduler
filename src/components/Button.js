@@ -11,16 +11,7 @@ export default function Button(props) {
       " button--danger": props.danger 
    })
 
-   // Using condtional staements to do the above
 
-   // if (props.confirm) {
-   //   buttonClass += " button--confirm";
-   // }
-
-   // if (props.danger) {
-   //    buttonClass += " button--danger";
-   // }
-    
    return (
       <button
         className={buttonClass}
