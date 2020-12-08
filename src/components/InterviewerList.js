@@ -13,7 +13,7 @@ export default function InterviewerList(props) {
         props.interviewers.map((interviewer) => {
          return <InterviewerListItem
             //must be called key for any unique property or react will thr error
-            setInterviewer={props.setInterviewer}
+            setInterviewer={(event) => props.setInterviewer(interviewer.id)}
             key={interviewer.id}
             // the above are needed but the LVList fucntion
             // the below are required by the IVListItem function
