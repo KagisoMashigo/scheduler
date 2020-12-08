@@ -23,8 +23,8 @@ export default function InterviewerListItem(props) {
     "interviewers--full": props.spots === 0,
     // "interviewers__item-image": props.selected,
     // Why does the above need to be blanked out? Code review
-    "interviewers__item--selected": props.selected,
-    "interviewers__item--selected-image": props.selected,
+    // "interviewers__item--selected": props.selected,
+    // "interviewers__item--selected-image": props.selected,
 
   })
 
