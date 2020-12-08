@@ -53,6 +53,7 @@ storiesOf("Button", module)
       name: "Wednesday",
       spots: 0,
     },
+    
   ];
   
   storiesOf("DayList", module)
