@@ -10,7 +10,7 @@ export default function InterviewerList(props) {
       <h4 className="interviewers__header text--light">Interviewer</h4>
       <ul className="interviewers__list">    
       {
-        props.interviewers.map((interviewer) => {
+        (props.interviewers || []).map((interviewer) => {
          return <InterviewerListItem
             //must be called key for any unique property or react will thr error
             setInterviewer={(event) => props.onChange(interviewer.id)}
