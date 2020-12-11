@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from 'react'
 
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
@@ -134,7 +134,7 @@ storiesOf("InterviewerList", module)
   .add("Preselected", () => (
     <InterviewerList
       interviewers={interviewers}
-      value={2}
+      interviewer={2}
       onChange={action("setInterviewer")}
     />
   ));
@@ -151,7 +151,7 @@ storiesOf("Appointment", module)
       <Show  
       student="Lydia Miller-Jones"
       // must edit this hard coded value
-      interviewer={interviewers[0]}
+      interviewer={interviewer}
       onEdit={action("onEdit")}
       onDelete={action("onDelete")}
       />)
@@ -168,23 +168,46 @@ storiesOf("Appointment", module)
   .add("Error", () => 
       <Error  
       message="Could not delete appointment."
+      // Not sure about actions
       onClose={action("onClose")}
       />)
   .add("Edit", () => 
       <Form  
-      name="Archie Cohen"
-      // Not sure about this
+      name=""
+      // Not sure about below and above
       interviewers={interviewers}
       onChange={action("setInterviewer")}
-      value={2}
+      interviewer={3}
+      // Functions are confusing
       onSave={action("onSave")}
       onCancel={action("onCancel")}
       />)
   .add("Create", () => 
       <Form  
-      // Not sure about this
+      // Not sure about below
+      interviewer={3}
+      // BELOW STILL NEEDED?
+      // name=""
+
       interviewers={interviewers}
       onSave={action("onSave")}
       onCancel={action("onCancel")}
-      />)
+ />)
+    .add("Appointment Empty", () => (
+      <Fragment>
+        <Appointment id={1}    time="12pm" />
+        <Appointment id="last" time="1pm" />
+      </Fragment>
+    ))
+    .add("Appointment Booked", () => (
+      <Fragment>
+        <Appointment
+          id={2}
+          time="12pm"
+          // not showing unterviewr name
+          interview={{ student: "Lydia Miller-Jones", interviewer }}
+        />
+        <Appointment id="last" time="1pm" />
+      </Fragment>
+    ))
 
