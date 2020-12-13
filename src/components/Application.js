@@ -1,55 +1,42 @@
-import React, { useState, useEffect } from "react";
-import "components/Appointment"
+import React from "react";
 
+import "components/Appointment"
+import useApplicationData from "hooks/useApplicationData";
 import DayList from "components/DayList.js";
 import Appointment from "components/Appointment";
-import { getAppointmentsForDay, getInterview } from "helpers/selectors";
+import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
 import "components/Application.scss";
-
-const axios = require('axios');
+// Bugs: show transtion not working due to error on line 13 in show when interverw namm needed
+// After deleting, editing or any actions that makes transiotn, I get error
+// Day not showing as selected
 
 export default function Application(props) {
   
-  const setDay = day => setState({ ...state, day });
-
-  const [state, setState] = useState({
-    day: "Monday",
-    days: [],
-    interviewers: {},
-    appointments: {}
-  });
-  
-  useEffect(() => {
-    
-    const daysUrl = `http://localhost:8001/api/days`
-    const appUrl = `http://localhost:8001/api/appointments`
-    const IVurl = `http://localhost:8001/api/interviewers`
-    
-    Promise.all([
-      axios.get(daysUrl),
-      axios.get(appUrl),
-      axios.get(IVurl)
-    ]).then((res) => {
-      // console.log("DAYS: ", res[0]);
-      // console.log("APP: ", res[1]);
-      // console.log("IV: ", res[2]); 
-      setState(prev => ({...prev, days: res[0].data, appointments: res[1].data, interviewers: res[2].data }));
-    })
-  }, []);
+  const {
+    state,
+    setDay,
+    bookInterview,
+    deleteInterview
+  } = useApplicationData();
   
   const dailyAppointments = getAppointmentsForDay(state, state.day);
+  const interviewers = getInterviewersForDay(state, state.day)
 
   const schedule = dailyAppointments.map((appointment) => {
 
     const interview = getInterview(state, appointment.interview);
+    // console.log(interviewers)
 
     return (
       <Appointment
       key={appointment.id}
       {...appointment}
       interview={interview}
-      // time={appointment.time}
+      interviewers={interviewers}
+      bookInterview={(interview) => bookInterview(appointment.id, interview)}
+      deleteInterview={() => deleteInterview(appointment.id)}
+      time={appointment.time}
       />
     )
   })
