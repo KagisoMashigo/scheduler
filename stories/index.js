@@ -150,7 +150,6 @@ storiesOf("Appointment", module)
   .add("Show", () => 
       <Show  
       student="Lydia Miller-Jones"
-      // must edit this hard coded value
       interviewer={interviewer}
       onEdit={action("onEdit")}
       onDelete={action("onDelete")}
