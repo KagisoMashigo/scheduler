@@ -10,6 +10,7 @@ export default function useVisualMode(initial) {
     if (!replace) {
       setMode(newMode);
       history.push(newMode)
+      setHistory(history)
     } else {
       setMode(newMode)
     }
@@ -19,6 +20,7 @@ export default function useVisualMode(initial) {
   const back = () => {
     if (history.length > 1) {
       history.pop();
+      setHistory(history)
       setMode(history[history.length - 1])
     }
   }
