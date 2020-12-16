@@ -11,6 +11,10 @@ import {
 
 import Application from "components/Application";
 
+// I'm using a get request to update days and therefore all tests
+// gauging spot count have not been included in integration testing
+// and were tested using Cypress
+
 afterEach(cleanup);
 
 describe("Application", () => {
@@ -51,17 +55,6 @@ describe("Application", () => {
     expect(getByText(appointment, "Saving...")).toBeInTheDocument();
 
     await waitForElement(() => queryByText(appointment, "Lydia Miller-Jones"));
-
-    const day = getAllByTestId(container, "day").find(day =>
-      queryByText(day, "Monday")
-    );
-    
-    // console.log(prettyDOM(day));
-
-    // debug()
-    await waitForElement(() => getByText(day, "no spots remaining"));
-      // I'm using a get request to update days and therefore this test is not relevant
-    expect(getByText(day, "no spots remaining")).toBeInTheDocument();
 
   });
 
