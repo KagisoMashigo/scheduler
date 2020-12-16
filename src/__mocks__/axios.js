@@ -69,9 +69,7 @@ export default {
   
   get: jest.fn(url => {
     if (url === "/api/days") {
-      const newDays = fixtures.days.map(day => {
-        
-      })
+
       return Promise.resolve({
         status: 200,
         statusText: "OK",
@@ -99,6 +97,16 @@ export default {
   }),
 
   put: jest.fn(url => {
+    // console.log(url);
+    if (url.includes("/api/appointments/")) {
+      return Promise.resolve({
+        status:     204,
+        statusText: "No Content"
+      });
+    }
+  }),
+
+  delete: jest.fn(url => {
     // console.log(url);
     if (url.includes("/api/appointments/")) {
       return Promise.resolve({
