@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-const axios = require('axios');
+// const axios = require('axios');
+import axios from "axios";
 
 export default function useApplicationData() {
 
@@ -14,9 +15,9 @@ export default function useApplicationData() {
 
   useEffect(() => {
     
-    const daysUrl = `http://localhost:8001/api/days`
-    const appUrl = `http://localhost:8001/api/appointments`
-    const IVurl = `http://localhost:8001/api/interviewers`
+    const daysUrl = `/api/days`
+    const appUrl = `/api/appointments`
+    const IVurl = `/api/interviewers`
     
     Promise.all([
       axios.get(daysUrl),
@@ -25,7 +26,7 @@ export default function useApplicationData() {
     ]).then((res) => {
       // console.log("DAYS: ", res[0]);
       // console.log("APP: ", res[1]);
-      console.log("IV: ", res[2].data); 
+      // console.log("IV: ", res[2].data); 
       setState(prev => ({...prev, days: res[0].data, appointments: res[1].data, interviewers: res[2].data }));
       
     })
@@ -83,7 +84,6 @@ export default function useApplicationData() {
       })
       //.catch((err) => console.log(`DELETE /api/appointments/${id}`, err));
   }
-
 
   return {
     state,
