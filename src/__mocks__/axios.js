@@ -53,14 +53,6 @@ const fixtures = {
   }
 };
 
-function getSpotsForDay (state, day) {
-  return state.days
-    .find(d => d.name === day) 
-    .appointments.reduce((a, c) => {
-      return state.appointments[c].interview ? a : a + 1;
-    }, 0);
-}
-
 export default {
 
   defaults: {
