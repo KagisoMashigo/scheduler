@@ -1,15 +1,17 @@
 // review this function
 export function getAppointmentsForDay(state, day) {
-
-  if(!state.days){
+  // Checks if state,days exists
+  if (!state.days) {
     return [];
   }
-  let theDay = state.days.filter(d => d.name === day)[0];
-  if(!theDay){
+  // Searches for the day we need
+  let theDay = state.days.filter((d) => d.name === day)[0];
+  if (!theDay) {
     return [];
   }
+  // Matches the day with the appointments
   let result = [];
-  for(const id of theDay.appointments){
+  for (const id of theDay.appointments) {
     const appointmentObj = state.appointments[id];
     result.push(appointmentObj);
   }
@@ -21,12 +23,14 @@ export function getInterview(state, interview) {
   let interviewersObj = state.interviewers;
   let result = {};
 
-  if(!interviewersObj || !interview){
+  // Checks if there is an interview
+  if (!interviewersObj || !interview) {
     return null;
   }
 
-  result.interviewer = interviewersObj[interview.interviewer]
-  result.student = interview.student
+  // Returns interview object if there is
+  result.interviewer = interviewersObj[interview.interviewer];
+  result.student = interview.student;
 
   return result;
 }
@@ -36,25 +40,25 @@ export function getInterviewersForDay(state, day) {
   let days = state.days;
   let interviewersForStateDay;
 
-  //Checks validity of state.days
-  if(state.days.length < 1){
+  // Checks validity of state.days
+  if (state.days.length < 1) {
     return [];
   }
 
-  //Retrieves interviewers for day
-  for(const stateDay of days){
-    if(stateDay.name === day){
+  // Retrieves interviewers for day
+  for (const stateDay of days) {
+    if (stateDay.name === day) {
       interviewersForStateDay = stateDay.interviewers;
     }
   }
 
-  //if no day is found, return empty []
-  if(!interviewersForStateDay){
+  // if no day is found, return empty []
+  if (!interviewersForStateDay) {
     return [];
   }
 
-  //Push interviewer objects to results;
-  for(const id of interviewersForStateDay){
+  // Push interviewer objects to results;
+  for (const id of interviewersForStateDay) {
     let interviewer = state.interviewers[id];
     result.push(interviewer);
   }
