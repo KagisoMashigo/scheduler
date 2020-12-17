@@ -1,40 +1,73 @@
-# TinyApp Project
+# Scheduler Project
 
-TinyApp is a full stack web application built with Node and Express that allows users to shorten long URLs (à la bit.ly). This iteration was built by me, Kagiso. The backend was entirerly constructed by me with the front end using bootstrap. I chose the buttons though!
+The Scheduler is a simple interview appointment creating tool. It is a demonstration of responsive, single-page web app design using React that is suitable for use on any device. It is a sleek and responsive SPA using React. The main functionality of the app is the creating, deletion and editing of interviews. Account management is not included in the functionality. All data is stored and retrieved from a database API.
 
-## Final Product
+Technologies used include React, SASS, WebPack, Babel, Axios client-side, Node.js, Express, Postgres server-side, Storybook, Testing Library, WebPack Dev Server, Jest, and Cypress for development and testing.
 
-!["Screenshot of homepage"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/homepage.png?raw=true)
+Interview Scheduler is not suitable for real-world production use and is only for demonstration and educational purposes.
 
-!["Screenshot of registration page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/register-page.png?raw=true)
+## Final Product Screenshots
 
-!["Screenshot of create url page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/create-url.png?raw=true)
+!["Screenshot of homepage"](https://github.com/KagisoMashigo/scheduler/blob/master/docs/Screenshot%20from%202020-12-16%2019-00-18.png?raw=true)
 
-!["Screenshot of my urls page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/my-urls-page.png?raw=true)
+!["Screenshot of new appointment"](https://github.com/KagisoMashigo/scheduler/blob/master/docs/Screenshot%20from%202020-12-16%2019-00-46.png?raw=true)
 
-!["Screenshot of edit url page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/edit-url.png?raw=true)
-
-!["Screenshot of login page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/login-page.png?raw=true)
+!["Screenshot of deleting appointment"](https://github.com/KagisoMashigo/scheduler/blob/master/docs/Screenshot%20from%202020-12-16%2019-01-04.png?raw=true)
 
 ## Getting Started
 
 - Install all dependencies (using the `npm install` command).
-- Run the development web server using the `node express_server.js or npm start if using nodemon` command.
 
+## Development
+
+# Directory Structure:
+```sh
+./                 Main project repository
+./docs             Project documentation
+./public           Static files served to the client, including manifest.json
+./public/images    Static images used on the site
+./src              Project source code
+./src/__mocks__    Axios mocks
+./src/components   React components
+./src/hooks        React hooks
+./src/helpers      Helper functions
+./src/styles       SASS styles
+./cypress          Cypress testing fixtures and tests, etc
+./stories          Storybook component stories
+```
 ## Dependencies
 
-- Node.js
-- Express
-- EJS
-- bcrypt
-- body-parser
-- cookie-session
-- method-override
-
+Interview Scheduler requires Node.js and Postgres and the following NPM packages:
+```sh
+- react
+- react-dom
+- react-scripts
+- axios
+- classnames
+- normalize.css
+```
 ## Dev Dependencies
+```sh
+- react-test-renderer
+- prop-types
+- node-sass
+- cypress
+```
+## Running Webpack Development Server
 
-- mocha
-- chai
-- nodemon
+```sh
+npm start
+```
 
-Have fun shortening them URLs!
+## Running Jest Test Framework
+
+```sh
+npm test
+```
+
+## Running Storybook Visual Testbed
+
+```sh
+npm run storybook
+```
+
