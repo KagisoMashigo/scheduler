@@ -18,9 +18,9 @@ Interview Scheduler is not suitable for real-world production use and is only fo
 
 - Install all dependencies (using the `npm install` command).
 
-## Development
+# Development:
 
-# Directory Structure:
+## Directory Structure
 ```sh
 ./                 Main project repository
 ./docs             Project documentation and screenshots
