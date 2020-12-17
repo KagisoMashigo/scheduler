@@ -14,11 +14,11 @@ Interview Scheduler is not suitable for real-world production use and is only fo
 
 !["Screenshot of deleting appointment"](https://github.com/KagisoMashigo/scheduler/blob/master/docs/Screenshot%20from%202020-12-16%2019-01-04.png?raw=true)
 
+# Development:
+
 ## Getting Started
 
 - Install all dependencies (using the `npm install` command).
-
-# Development:
 
 ## Directory Structure
 ```sh
