@@ -1,6 +1,6 @@
 # Scheduler Project
 
-The Scheduler is a simple interview appointment creating tool. It is a demonstration of responsive, single-page web app design using React that is suitable for use on any device. It is a sleek and responsive SPA using React. The main functionality of the app is the creating, deletion and editing of interviews. Account management is not included in the functionality. All data is stored and retrieved from a database API.
+The Scheduler is a simple interview appointment creating tool. It is a sleek and responsive SPA using React technology. The main functionality of the app is the creating, deletion and editing of interviews. Account management is not included in the functionality. All data is stored and retrieved from a database API.
 
 Technologies used include React, SASS, WebPack, Babel, Axios client-side, Node.js, Express, Postgres server-side, Storybook, Testing Library, WebPack Dev Server, Jest, and Cypress for development and testing.
 
