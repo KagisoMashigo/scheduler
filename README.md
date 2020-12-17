@@ -23,16 +23,16 @@ Interview Scheduler is not suitable for real-world production use and is only fo
 # Directory Structure:
 ```sh
 ./                 Main project repository
-./docs             Project documentation
-./public           Static files served to the client, including manifest.json
+./docs             Project documentation and screenshots
+./public           Static files served to the client
 ./public/images    Static images used on the site
 ./src              Project source code
 ./src/__mocks__    Axios mocks
 ./src/components   React components
 ./src/hooks        React hooks
 ./src/helpers      Helper functions
-./src/styles       SASS styles
-./cypress          Cypress testing fixtures and tests, etc
+./src/styles       Styling
+./cypress          Cypress testing fixtures
 ./stories          Storybook component stories
 ```
 ## Dependencies
