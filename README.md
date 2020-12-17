@@ -1,23 +1,40 @@
-# Interview Scheduler
+# TinyApp Project
 
-## Setup
+TinyApp is a full stack web application built with Node and Express that allows users to shorten long URLs (à la bit.ly). This iteration was built by me, Kagiso. The backend was entirerly constructed by me with the front end using bootstrap. I chose the buttons though!
 
-Install dependencies with `npm install`.
+## Final Product
 
-## Running Webpack Development Server
+!["Screenshot of homepage"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/homepage.png?raw=true)
 
-```sh
-npm start
-```
+!["Screenshot of registration page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/register-page.png?raw=true)
 
-## Running Jest Test Framework
+!["Screenshot of create url page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/create-url.png?raw=true)
 
-```sh
-npm test
-```
+!["Screenshot of my urls page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/my-urls-page.png?raw=true)
 
-## Running Storybook Visual Testbed
+!["Screenshot of edit url page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/edit-url.png?raw=true)
 
-```sh
-npm run storybook
-```
+!["Screenshot of login page"](https://github.com/KagisoMashigo/tinyapp/blob/master/docs/login-page.png?raw=true)
+
+## Getting Started
+
+- Install all dependencies (using the `npm install` command).
+- Run the development web server using the `node express_server.js or npm start if using nodemon` command.
+
+## Dependencies
+
+- Node.js
+- Express
+- EJS
+- bcrypt
+- body-parser
+- cookie-session
+- method-override
+
+## Dev Dependencies
+
+- mocha
+- chai
+- nodemon
+
+Have fun shortening them URLs!
