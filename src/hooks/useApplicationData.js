@@ -60,7 +60,6 @@ export default function useApplicationData() {
     return axios
       .delete(`/api/appointments/${id}`)
       .then((res) => {
-        console.log(`DELETE /api/appointments/${id}`, res);
         return setState({
           ...state,
           appointments: {

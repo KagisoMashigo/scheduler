@@ -10,6 +10,7 @@ import Confirm from "components/Appointment/Confirm.js";
 import Error from "components/Appointment/Error.js";
 
 export default function Appointment(props) {
+  // Saves user information
   function saveInterview(name, interviewer) {
     transition(SAVING);
     props
@@ -19,7 +20,6 @@ export default function Appointment(props) {
       })
       .then(() => transition(SHOW))
       .catch((err) => {
-        console.log("saveInterview: ERROR", err);
         transition(ERROR_SAVE, true);
       });
   }
